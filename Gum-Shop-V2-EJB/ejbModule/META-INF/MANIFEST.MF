@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: Gum-Shop-V2-EJBClient.jar
+

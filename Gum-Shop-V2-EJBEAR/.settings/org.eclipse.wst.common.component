@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Gum-Shop-V2-EJBEAR">
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+        <dependent-module archiveName="Gum-Shop-V2-EJB.jar" deploy-path="/" handle="module:/resource/Gum-Shop-V2-EJB/Gum-Shop-V2-EJB">
+            <dependent-object>Module_1571066065521</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Gum-Shop-V2-EJBClient.jar" deploy-path="/" handle="module:/resource/Gum-Shop-V2-EJBClient/Gum-Shop-V2-EJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
