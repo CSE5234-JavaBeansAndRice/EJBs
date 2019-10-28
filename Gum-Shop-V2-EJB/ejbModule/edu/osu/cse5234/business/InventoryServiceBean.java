@@ -45,8 +45,8 @@ public class InventoryServiceBean implements InventoryService {
     	List<Item> actualItems = inventory.getItems();
     	for (int i =0; i < items.size(); i++) {
     		for (int j = 0; j < actualItems.size(); j++) {
-    			if (items.get(i).getName() == actualItems.get(j).getName()) {
-    		  		if (items.get(i).getAvailableQuantity() > actualItems.get(i).getAvailableQuantity()) {
+    			if (items.get(i).getName().equalsIgnoreCase(actualItems.get(j).getName())) {
+    		  		if (items.get(i).getAvailableQuantity() > actualItems.get(j).getAvailableQuantity()) {
     	    			validate = false;
     	    		}
     			}
@@ -62,8 +62,8 @@ public class InventoryServiceBean implements InventoryService {
     	      List<Item> actualItems = getAvailableInventory().getItems();
     	      for (int i =0; i < items.size(); i++) {
     	    		for (int j = 0; j < actualItems.size(); j++) {
-    	    			if (items.get(i).getName() == actualItems.get(j).getName()) {
-    	    		  		actualItems.get(i).setAvailableQuantity(actualItems.get(i).getAvailableQuantity() - items.get(i).getAvailableQuantity());
+    	    			if (items.get(i).getName().equalsIgnoreCase(actualItems.get(j).getName())) {
+    	    		  		actualItems.get(j).setAvailableQuantity(actualItems.get(j).getAvailableQuantity() - items.get(i).getAvailableQuantity());
     	    			}
     	    		}
     	 
