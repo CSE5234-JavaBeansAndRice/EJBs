@@ -1,6 +1,5 @@
 package edu.osu.cse5234.business;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Remote;
@@ -59,7 +58,21 @@ public class InventoryServiceBean implements InventoryService {
 
     @Override
     public boolean updateInventory(List<Item> items) {
-        return true;
+    	if (validateQuantity(items)) {
+    	      List<Item> actualItems = getAvailableInventory().getItems();
+    	      for (int i =0; i < items.size(); i++) {
+    	    		for (int j = 0; j < actualItems.size(); j++) {
+    	    			if (items.get(i).getName() == actualItems.get(j).getName()) {
+    	    		  		actualItems.get(i).setAvailableQuantity(actualItems.get(i).getAvailableQuantity() - items.get(i).getAvailableQuantity());
+    	    			}
+    	    		}
+    	 
+    	    	}
+    	} else {
+    		return false;
+    	}
+    	return true;
+  
     }
 
 }
